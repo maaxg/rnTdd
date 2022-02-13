@@ -8,8 +8,8 @@
     "start": "react-native start",
     "test": "jest && yarn detox:android",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "detox:build-android": "detox build -c android --workers 2",
-    "detox:android": "detox test -c android --workers 2"
+    "detox:build-android": "detox build --configuration android --workers 2",
+    "detox:android": "detox test --configuration android --take-screenshots failing"
   },
   "dependencies": {
     "react": "17.0.2",
@@ -47,6 +47,7 @@
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
     ],
+    "testPathIgnorePatterns": ["<rootDir>/e2e/"],
     "moduleFileExtensions": [
       "ts",
       "tsx",
